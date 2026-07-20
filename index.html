@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ilénanaa — blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar"></nav>
+
+  <div class="hero">
+    <h1 class="serif-italic">a yapper with loud emotions</h1>
+    <p>french and english posts around here!!</p>
+  </div>
+
+  <main class="posts-grid" id="posts-grid"></main>
+
+  <footer class="site-footer">
+    <div class="copyright">© <span id="year"></span> ilénanaa</div>
+    <div class="social-row" id="footer-social"></div>
+  </footer>
+
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    renderNavbar("home");
+  </script>
+</body>
+</html>

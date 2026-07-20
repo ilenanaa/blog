@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>à propos — ilénana</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar"></nav>
+
+  <main class="about-page">
+    <h1 class="serif-italic">à propos</h1>
+    <p class="bio" id="about-bio"></p>
+    <hr class="divider" />
+    <div class="links-label">RETROUVE-MOI AILLEURS</div>
+    <div class="social-row large" id="about-social"></div>
+  </main>
+
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script>
+    renderNavbar("about");
+  </script>
+</body>
+</html>
