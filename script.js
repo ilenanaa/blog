@@ -186,7 +186,7 @@ function postCardHtml(post, likeCount, commentCount) {
         <hr class="divider" />
         <div class="post-footer">
           <div class="comments">${ICONS.comment} ${commentCount}</div>
-          <div class="likes">${likeCount} ${ICONS.heart(hasLiked)}</div>
+          <div class="likes">${likeCount} ${ICONS.heart(likeCount)}</div>
         </div>
       </div>
     </a>
@@ -246,7 +246,7 @@ async function renderArticle() {
     <hr class="divider" />
     <p class="article-content">${escapeHtml(articleText)}</p>
     <div class="article-actions">
-      <button id="like-btn" class="like-btn" disabled>${ICONS.heart(false)} <span>…</span></button>
+      <button id="like-btn" class="like-btn" disabled>${ICONS.heart(false)} <span id="like-count">…</span></button>
       <div class="comment-count-display">${ICONS.comment} <span id="comment-count-top">…</span></div>
     </div>
     <hr class="divider" />
@@ -304,9 +304,10 @@ async function refreshArticleState(post) {
 
     const likeBtn = document.getElementById("like-btn");
     likeBtn.classList.toggle("liked", liked);
-    likeBtn.innerHTML = `${ICONS.heart(liked)} <span>${post.initialLikes + (likeCount || 0)}</span>`;
+    likeBtn.innerHTML = `${ICONS.heart(liked)}`;
 
     document.getElementById("comment-count-top").textContent = comments.length;
+    document.getElementById("like-count").textContent = post.initialLikes + (likeCount || 0);
 
     const list = document.getElementById("comments-list");
     if (comments.length === 0) {
