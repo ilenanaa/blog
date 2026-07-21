@@ -33,6 +33,7 @@ const POSTS = [
     image: "images/tu-es-bizarre.jpg",
     date: "2026-04-29",
     content: "text/tu-es-bizarre.txt",
+    initalLikes: 0,
   },
   {
     id: "ai-destroyed-my-childhood-dream",
@@ -41,6 +42,7 @@ const POSTS = [
     image: "images/ai-destroyed-my-childhood-dream.jpg",
     date: "2026-01-29",
     content: "text/ai-destroyed-my-childhood-dream.txt",
+    initalLikes: 0,
   },
   {
     id: "brat-ascension",
@@ -49,6 +51,7 @@ const POSTS = [
     image: "images/brat-ascension.jpg",
     date: "2026-01-28",
     content: "text/brat-ascension.txt",
+    initalLikes: 0,
   },
   {
     id: "today-was-a-heavy-day",
@@ -57,6 +60,7 @@ const POSTS = [
     image: "images/today-was-a-heavy-day.jpg",
     date: "2025-10-14",
     content: "text/today-was-a-heavy-day.txt",
+    initalLikes: 0,
   },
   {
     id: "question-mark",
@@ -65,6 +69,7 @@ const POSTS = [
     image: "images/question-mark.jpg",
     date: "2025-06-28",
     content: "text/question-mark.txt",
+    initalLikes: 0,
   },
   {
     id: "i-hated-spring",
@@ -73,6 +78,7 @@ const POSTS = [
     image: "images/i-hated-spring.jpg",
     date: "2023-10-08",
     content: "text/i-hated-spring.txt",
+    initalLikes: 0,
   },
   {
     id: "my-definition",
@@ -81,5 +87,6 @@ const POSTS = [
     image: "images/my-definition.jpg",
     date: "2023-05-29",
     content: "text/my-definition.txt",
+    initalLikes: 0,
   }
 ];

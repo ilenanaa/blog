@@ -157,12 +157,12 @@ async function renderHome() {
     if (!grid) return;
 
     // Affiche d'abord la grille avec les compteurs de base, pendant le chargement Supabase
-    grid.innerHTML = POSTS.map((post) => postCardHtml(post, 0)).join("");
+    grid.innerHTML = POSTS.map((post) => postCardHtml(post,post.initialLikes, 0)).join("");
 
     const { commentCounts, likeCounts } = await fetchAllCounts();
 
     grid.innerHTML = POSTS.map((post) => {
-        const likeCount = likeCounts[post.id] || 0;
+        const likeCount = post.initialLikes + (likeCounts[post.id] || 0);
         const commentCount = commentCounts[post.id] || 0;
         return postCardHtml(post, likeCount, commentCount);
     }).join("");
@@ -304,7 +304,7 @@ async function refreshArticleState(post) {
 
     const likeBtn = document.getElementById("like-btn");
     likeBtn.classList.toggle("liked", liked);
-    likeBtn.innerHTML = `${ICONS.heart(liked)} <span>${likeCount}</span>`;
+    likeBtn.innerHTML = `${ICONS.heart(liked)} <span>${post.initialLikes + (likeCount || 0)}</span>`;
 
     document.getElementById("comment-count-top").textContent = comments.length;
 
